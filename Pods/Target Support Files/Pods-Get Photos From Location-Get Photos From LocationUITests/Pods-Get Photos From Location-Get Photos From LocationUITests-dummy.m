@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_Get_Photos_From_Location_Get_Photos_From_LocationUITests : NSObject
+@end
+@implementation PodsDummy_Pods_Get_Photos_From_Location_Get_Photos_From_LocationUITests
+@end

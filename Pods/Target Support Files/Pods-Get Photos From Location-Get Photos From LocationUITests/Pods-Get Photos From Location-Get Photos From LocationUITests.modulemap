@@ -1,0 +1,6 @@
+framework module Pods_Get_Photos_From_Location_Get_Photos_From_LocationUITests {
+  umbrella header "Pods-Get Photos From Location-Get Photos From LocationUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
