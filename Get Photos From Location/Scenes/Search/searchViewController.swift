@@ -1,8 +1,8 @@
 //
 //  SearchViewController.swift
-//  Get Photos By Location
+//  Get Photos From Location
 //
-//  Created by Mohamed Korany Ali on 2/10/20.
+//  Created by Mohamed Korany Ali on 2/11/20.
 //  Copyright © 2020 Mohamed Korany Ali. All rights reserved.
 //
 
@@ -65,11 +65,12 @@ class searchViewController: UIViewController , UITableViewDelegate , UITableView
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         
+        presenter?.showPhotosScreen(lat:places[indexPath.row].placemark.coordinate.latitude , long:places[indexPath.row].placemark.coordinate.longitude)
         
-        let vc = photosRouter.createModule()
-        self.photoVCDelegate = vc as? LatLongDelegate
-        self.photoVCDelegate?.updateLatLong(lat: places[indexPath.row].placemark.coordinate.latitude, long: places[indexPath.row].placemark.coordinate.longitude)
-        self.present(vc, animated: true, completion: nil)
+//        let vc = photosRouter.createModule()
+//        self.photoVCDelegate = vc as? LatLongDelegate
+//        self.photoVCDelegate?.updateLatLong(lat: places[indexPath.row].placemark.coordinate.latitude, long: places[indexPath.row].placemark.coordinate.longitude)
+//        self.present(vc, animated: true, completion: nil)
         
         
     }
