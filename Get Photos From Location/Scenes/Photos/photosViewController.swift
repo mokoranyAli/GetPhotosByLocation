@@ -11,11 +11,8 @@
 import UIKit
 
 protocol LatLongDelegate {
-
 func updateLatLong(lat:Double , long:Double)
-    
 }
-
 
 
 
@@ -52,7 +49,6 @@ class photosViewController: UIViewController, photosViewProtocol , LatLongDelega
         print(lat ?? 0.0)
         presenter?.getPhotos(searchType: .Coordinates(lat: self.lat!, long: self.long!))
     }
-
 }
 
 

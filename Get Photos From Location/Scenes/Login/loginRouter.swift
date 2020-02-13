@@ -48,8 +48,12 @@ class loginRouter: loginWireframeProtocol {
       
       func showHomeScreen() {
         
-        let vc = homeRouter.createModule()
-        navigationController?.pushViewController(vc, animated: true)
+//        let vc = homeRouter.createModule()
+//        self.viewController?.navigationController?.isNavigationBarHidden = false
+//        vc.navigationItem.setHidesBackButton(true, animated: true)
+//        self.viewController?.navigationItem.setHidesBackButton(true, animated: true)
+        
+        navigationController?.pushViewController(ContainerController(), animated: true)
       }
     
     

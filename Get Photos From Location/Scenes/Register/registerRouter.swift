@@ -13,31 +13,34 @@ import UIKit
 class registerRouter: registerWireframeProtocol {
     
     
-private weak var navigationController: UINavigationController?
+    private weak var navigationController: UINavigationController?
     weak var viewController: UIViewController?
-
+    
     static func createModule() -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
-       
+        
         let view = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "\(registerViewController.self)") as! registerViewController
         let interactor = registerInteractor()
         let router = registerRouter()
         let presenter = registerPresenter(interface: view, interactor: interactor, router: router)
-
+        
         view.presenter = presenter
         interactor.presenter = presenter
         router.viewController = view
         
-      
-
-
+        
+        
+        
         return view
     }
     
     
     func showHomeScreen() {
         let vc = homeRouter.createModule()
-        self.viewController?.navigationController?.pushViewController(vc, animated: true)
+        self.viewController?.navigationController?.isNavigationBarHidden = false
+        vc.navigationItem.setHidesBackButton(true, animated: true)
+        self.viewController?.navigationItem.setHidesBackButton(true, animated: true)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

@@ -13,21 +13,33 @@ import MapKit
 class homeViewController: UIViewController, homeViewProtocol {
     
     
+    var delegate: HomeControllerDelegate?
+    
     @IBOutlet weak var mapView: MKMapView!
     var presenter: homePresenterProtocol?
-    @IBAction func searchButtonPressed(_ sender: Any) {
-        presenter?.showSearchController()
+   
+    @IBAction func searchButtonItemClicked(_ sender: Any) {
         
-        
+         presenter?.showSearchController()
+        print("search")
     }
     
-    func setupNavBar(){
-        self.navigationController?.isToolbarHidden = false
-        let menu = UIBarButtonItem(image: UIImage(named: "menu"), style: .plain, target: self, action:#selector(didMenuSelected))
-        self.navigationItem.leftBarButtonItem  = menu
-        
-        self.navigationItem.setHidesBackButton(true, animated: true);
-    }
+  
+    
+    
+    func configureNavigationBar() {
+              navigationController?.navigationBar.barTintColor = .darkGray
+              navigationController?.navigationBar.barStyle = .black
+              
+              navigationItem.title = "Location's photos"
+              navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_menu_white_3x").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleMenuToggle))
+          }
+       
+       @objc func handleMenuToggle() {
+           delegate?.handleMenuToggle(forMenuOption: nil)
+       }
+    
+    
     
     @objc func didMenuSelected() {
            print("handle menu")
@@ -36,7 +48,7 @@ class homeViewController: UIViewController, homeViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         // self.navigationController?.isToolbarHidden = false
-        setupNavBar()
+      configureNavigationBar()
         mapView.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(didLongpressed(sender:))))
         
     }

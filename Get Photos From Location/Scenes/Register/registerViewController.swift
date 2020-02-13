@@ -58,10 +58,8 @@ class registerViewController: UIViewController, registerViewProtocol  , AlertVie
         userName.layer.borderColor = customColor.cgColor
         password.layer.borderColor = customColor.cgColor
         repeatedPassword.layer.borderColor = customColor.cgColor
-        
         email.layer.borderWidth = 1.0
         userName.layer.borderWidth = 1.0
-        
         password.layer.borderWidth = 1.0
         repeatedPassword.layer.borderWidth = 1.0
         repeatedPassword.layer.borderWidth = 1.0

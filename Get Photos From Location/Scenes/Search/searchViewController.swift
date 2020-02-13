@@ -66,13 +66,7 @@ class searchViewController: UIViewController , UITableViewDelegate , UITableView
         
         
         presenter?.showPhotosScreen(lat:places[indexPath.row].placemark.coordinate.latitude , long:places[indexPath.row].placemark.coordinate.longitude)
-        
-//        let vc = photosRouter.createModule()
-//        self.photoVCDelegate = vc as? LatLongDelegate
-//        self.photoVCDelegate?.updateLatLong(lat: places[indexPath.row].placemark.coordinate.latitude, long: places[indexPath.row].placemark.coordinate.longitude)
-//        self.present(vc, animated: true, completion: nil)
-        
-        
+
     }
 }
 
