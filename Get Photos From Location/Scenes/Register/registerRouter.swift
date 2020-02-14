@@ -36,11 +36,7 @@ class registerRouter: registerWireframeProtocol {
     
     
     func showHomeScreen() {
-        let vc = homeRouter.createModule()
-        self.viewController?.navigationController?.isNavigationBarHidden = false
-        vc.navigationItem.setHidesBackButton(true, animated: true)
-        self.viewController?.navigationItem.setHidesBackButton(true, animated: true)
-        navigationController?.pushViewController(vc, animated: true)
+        self.viewController?.navigationController?.pushViewController(ContainerController(), animated: true)
     }
 }
 
