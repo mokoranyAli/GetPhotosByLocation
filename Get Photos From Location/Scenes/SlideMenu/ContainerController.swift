@@ -6,10 +6,9 @@
 //  Copyright © 2020 Mohamed Korany Ali. All rights reserved.
 //
 
-import Foundation
+
 
 import UIKit
-
 class ContainerController: UIViewController {
     
     // MARK: - Properties
@@ -85,6 +84,8 @@ class ContainerController: UIViewController {
         switch menuOption {
         case .Profile:
             print("Show profile")
+//            let vc = registerRouter.createModule()
+//            self.centerController.navigationController?.pushViewController(vc, animated: true)
         case .Favorit:
             print("Show favorit")
         case .Navigation:

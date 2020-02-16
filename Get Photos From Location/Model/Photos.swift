@@ -24,8 +24,6 @@ struct Photo: Codable, PhotoURL {
     let farm: Int
     let title: String
     let ispublic, isfriend, isfamily: Int
-    
-    
 }
 
 protocol PhotoURL {}

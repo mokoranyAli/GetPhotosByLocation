@@ -9,7 +9,6 @@
 //
 
 import UIKit
-import UIKit
 
 class loginRouter: loginWireframeProtocol {
     
@@ -27,10 +26,10 @@ class loginRouter: loginWireframeProtocol {
         let interactor = loginInteractor()
         let router = loginRouter()
         let presenter = loginPresenter(interface: view, interactor: interactor, router: router)
-
         view.presenter = presenter
         interactor.presenter = presenter
         router.viewController = view
+        
         let navigationController = UINavigationController(rootViewController: view)
         navigationController.isNavigationBarHidden = true
         
@@ -54,7 +53,7 @@ class loginRouter: loginWireframeProtocol {
 //        vc.navigationItem.setHidesBackButton(true, animated: true)
 //        self.viewController?.navigationItem.setHidesBackButton(true, animated: true)
         
-        navigationController?.pushViewController(ContainerController(), animated: true)
+        viewController?.navigationController?.pushViewController(ContainerController(), animated: true)
       }
     
     

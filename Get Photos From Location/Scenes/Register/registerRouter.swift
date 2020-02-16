@@ -17,7 +17,6 @@ class registerRouter: registerWireframeProtocol {
     weak var viewController: UIViewController?
     
     static func createModule() -> UIViewController {
-        // Change to get view from storyboard if not using progammatic UI
         
         let view = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "\(registerViewController.self)") as! registerViewController
         let interactor = registerInteractor()
@@ -27,9 +26,6 @@ class registerRouter: registerWireframeProtocol {
         view.presenter = presenter
         interactor.presenter = presenter
         router.viewController = view
-        
-        
-        
         
         return view
     }
