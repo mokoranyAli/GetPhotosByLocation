@@ -1,1 +1,1 @@
-# GetPhotosByLocation
+# Screenshots
